@@ -1,0 +1,161 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+  --arctic: #F1F6F4;
+  --forsythia: #FFC801;
+  --nocturnal: #114C5A;
+  --mint: #D9E8E2;
+  --saffron: #FF9932;
+  --noir: #172B36;
+
+  --font-body: "Inter", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE LAYOUT
+========================= */
+
+html, body {
+  height: 100%;
+  background: var(--noir);
+  color: var(--arctic);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+h1 {
+  font-family: var(--font-code);
+  color: var(--arctic);
+  font-weight: 700;
+}
+
+h2 {
+  font-family: var(--font-code);
+  color: rgba(241, 246, 244, 0.92);
+}
+
+h3 {
+  color: rgba(241, 246, 244, 0.85);
+}
+
+p {
+  color: rgba(241, 246, 244, 0.72);
+  line-height: 1.6;
+}
+
+/* =========================
+   UTIL TEXT CLASSES
+========================= */
+
+.muted {
+  color: rgba(241, 246, 244, 0.6);
+}
+
+.highlight {
+  color: var(--forsythia);
+}
+
+/* =========================
+   CARD SYSTEM (GLASS UI)
+========================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 200, 1, 0.08);
+}
+
+/* =========================
+   BUTTON SYSTEM
+========================= */
+
+button.primary {
+  background: var(--forsythia);
+  color: #0B0F17;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+button.primary:hover {
+  transform: scale(1.03);
+}
+
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(241, 246, 244, 0.2);
+  color: var(--arctic);
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+button.secondary:hover {
+  border-color: var(--forsythia);
+  color: var(--forsythia);
+}
+
+/* =========================
+   EFFECTS
+========================= */
+
+.glow {
+  text-shadow: 0 0 40px rgba(255, 200, 1, 0.15);
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+
+.section {
+  padding: 80px 24px;
+}
+
+@keyframes floatSoft {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-6px) scale(1.01); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 0 rgba(255, 200, 1, 0); }
+  50% { box-shadow: 0 0 20px rgba(255, 200, 1, 0.12); }
+  100% { box-shadow: 0 0 0 rgba(255, 200, 1, 0); }
+}
+
+.hero {
+  /* Layer SVG on top of gradient for decorative background */
+  background-image: url("./assets/cube-16-solid.svg"), linear-gradient(180deg, #172B36 0%, #0B0F17 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right center, 0% 0%;
+  background-size: contain, auto;
+}
