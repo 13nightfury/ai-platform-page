@@ -20,7 +20,10 @@ React.js
 HTML5 & CSS3
 JavaScript (ES6+)
 SVG Assets
-CSS Animations
+CSS 
+
+
+
 📁 Project Structure
 project-folder/
 │── public/
